@@ -1,0 +1,35 @@
+$ docker build -t my-jenkins .
+Sending build context to Docker daemon 3.072 kB
+Step 1/3 : FROM openshift/jenkins-2-centos7
+latest: Pulling from openshift/jenkins-2-centos7
+5e35d10a3eba: Pull complete
+a01c0622cd75: Pull complete
+84edc3f0a0c7: Pull complete
+a776a83c11e3: Pull complete
+21ceff04e690: Pull complete
+77600a0247f6: Pull complete
+bacf8a39fccb: Pull complete
+e22e78690c3c: Pull complete
+54a9b7069684: Pull complete
+310bf9521593: Pull complete
+Digest: sha256:479d1df7a402d57ece188a90f23cd08accbeca1cfc053810f4a7f478c8ca3155
+Status: Downloaded newer image for openshift/jenkins-2-centos7:latest
+ ---> b84808f5310f
+Step 2/3 : COPY plugins.txt /opt/openshift/configuration/plugins.txt
+ ---> e62ed51bf601
+Removing intermediate container 7055b4c89c15
+Step 3/3 : RUN /usr/local/bin/install-plugins.sh /opt/openshift/configuration/plugins.txt
+ ---> Running in b36fa01e65b4
+Creating initial locks...
+Locking Checkmarx:8.6.0
+
+Analyzing war...
+Using version-specific update center: https://updates.jenkins.io/2.107...
+
+Downloading plugins...
+Downloading plugin: Checkmarx from https://updates.jenkins.io/download/plugins/Checkmarx/8.6.0/Checkmarx.hpi
+
+
+Downloading plugin: Checkmarx-plugin from https://updates.jenkins.io/download/plugins/Checkmarx-plugin/8.6.0/Checkmarx-plugin.hpi
+Failed to download plugin: Checkmarx or Checkmarx-plugin
+The command '/bin/sh -c /usr/local/bin/install-plugins.sh /opt/openshift/configuration/plugins.txt' returned a non-zero code: 1
